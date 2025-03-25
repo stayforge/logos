@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stayforge Logo Usage Examples</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --sf-primary: linear-gradient(135deg, #131416 0%, #121315 100%);
+            --sf-secondary: linear-gradient(135deg, #141317 0%, #121216 100%);
+            --sf-accent: linear-gradient(135deg, #121216 0%, #101014 100%);
+            --sf-dark: linear-gradient(135deg, #101014 0%, #0f0f13 100%);
+            --sf-darker: linear-gradient(135deg, #0e0e12 0%, #0c0c10 100%);
+
+            /* Override Bootstrap colors */
+            --bs-primary: var(--sf-primary);
+            --bs-primary-rgb: 59, 38, 103;
+            --bs-link-color: var(--sf-accent);
+            --bs-link-hover-color: var(--sf-secondary);
+            --bs-btn-bg: var(--sf-primary);
+            --bs-btn-border-color: var(--sf-primary);
+            --bs-btn-hover-bg: var(--sf-secondary);
+            --bs-btn-hover-border-color: var(--sf-secondary);
+            --bs-btn-active-bg: var(--sf-secondary);
+            --bs-btn-active-border-color: var(--sf-secondary);
+        }
+
+        .btn-primary {
+            --bs-btn-color: #fff;
+            --bs-btn-bg: var(--sf-primary);
+            --bs-btn-border-color: var(--sf-primary);
+            --bs-btn-hover-color: #fff;
+            --bs-btn-hover-bg: var(--sf-secondary);
+            --bs-btn-hover-border-color: var(--sf-secondary);
+            --bs-btn-focus-shadow-rgb: 96, 165, 250;
+            --bs-btn-active-color: #fff;
+            --bs-btn-active-bg: var(--sf-secondary);
+            --bs-btn-active-border-color: var(--sf-secondary);
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #fff;
+            --bs-btn-disabled-bg: var(--sf-primary);
+            --bs-btn-disabled-border-color: var(--sf-primary);
+        }
+
+        .btn-dark {
+            --bs-btn-color: #fff;
+            --bs-btn-bg: var(--sf-dark);
+            --bs-btn-border-color: var(--sf-dark);
+            --bs-btn-hover-color: #fff;
+            --bs-btn-hover-bg: var(--sf-darker);
+            --bs-btn-hover-border-color: var(--sf-darker);
+            --bs-btn-focus-shadow-rgb: 15, 23, 42;
+            --bs-btn-active-color: #fff;
+            --bs-btn-active-bg: var(--sf-darker);
+            --bs-btn-active-border-color: var(--sf-darker);
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #fff;
+            --bs-btn-disabled-bg: var(--sf-dark);
+            --bs-btn-disabled-border-color: var(--sf-dark);
+        }
+
+        body {
+            background-color: #1b2229;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: #1f1e20;
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 0;
+            margin-bottom: -2rem;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(255,255,255,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at bottom left, rgba(0,0,0,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: cover;
+            opacity: 0.1;
+            animation: wave 20s linear infinite;
+        }
+
+        @keyframes wave {
+            0% {
+                background-position: 0 bottom;
+            }
+            100% {
+                background-position: 1440px bottom;
+            }
+        }
+
+        .header h1 {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .header p {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+
+        .download-section {
+            margin-top: -6rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-item {
+            position: relative;
+            transition: all 0.2s ease;
+            background: rgba(59, 38, 103, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 8px;
+        }
+
+        .logo-display {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo-display.dark {
+            background: var(--sf-darker);
+        }
+
+        .logo-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-item::before {
+            display: none;
+        }
+
+        .bad-example::after,
+        .good-example::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--sf-darker);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "bootstrap-icons" !important;
+            font-size: 14px;
+            line-height: 24px;
+            text-align: center;
+            transform: translate(50%, -50%);
+            z-index: 1;
+        }
+
+        .bad-example::after {
+            content: "\F659";
+            color: #dc3545;
+            border: 2px solid #dc3545;
+        }
+
+        .good-example::after {
+            content: "\F633";
+            color: #198754;
+            border: 2px solid #198754;
+        }
+
+        .example-card {
+            border: none;
+            background: rgba(59, 38, 103, 0.05);
+            backdrop-filter: blur(10px);
+            transition: all 0.2s ease;
+        }
+
+        .example-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: rgba(59, 38, 103, 0.1);
+        }
+
+        .section-title {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--sf-secondary), var(--sf-primary));
+            border-radius: 2px;
+        }
+
+        .card-text {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .bg-white {
+            background: #ffffff !important;
+        }
+
+        .bg-dark {
+            background: var(--sf-darker) !important;
+        }
+    </style>
+</head>
+<body>
+    <header class="header text-white py-5 text-center">
+        <div class="container position-relative">
+            <h1 class="display-4 fw-bold mb-4">Stayforge Logo Usage Examples</h1>
+            <p class="lead">Guidelines and examples for using Stayforge logos correctly</p>
+        </div>
+    </header>
+
+    <section class="download-section">
+        <div class="container">
+            <div class="card shadow-lg border-0">
+                <div class="card-body text-center p-5">
+                    <h2 class="h3 mb-4"><i class="bi bi-download me-2"></i>Download Logo Assets</h2>
+                    <p class="mb-4">Get all logo files in various formats from our GitHub repository</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="https://github.com/stayforge/logos/archive/refs/heads/main.zip" class="btn btn-primary btn-lg">
+                            <i class="bi bi-download me-2"></i>Download All Assets (ZIP)
+                        </a>
+                        <a href="https://github.com/stayforge/logos" class="btn btn-dark btn-lg">
+                            <i class="bi bi-github me-2"></i>View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <main class="container py-5">
+        <!-- Correct Usage Examples -->
+        <section class="mb-5">
+            <h2 class="section-title h3"><i class="bi bi-check-circle me-2"></i>Correct Usage Examples</h2>
+            
+            <div class="card example-card shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h3 class="h4 mb-4"><i class="bi bi-arrows-angle-expand me-2"></i>1. Proper Clear Space</h3>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 logo-item good-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display">
+                                        <img src="https://logo.stayforge.io/logos/StayForge_full.svg" alt="Stayforge Full Logo" class="img-fluid" width="200">
+                                    </div>
+                                    <p class="card-text">Correct: Logo has proper clear space around it</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 logo-item bad-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display" style="padding: 0;">
+                                        <img src="https://logo.stayforge.io/logos/StayForge_full.svg" alt="Stayforge Full Logo" class="img-fluid" width="200">
+                                    </div>
+                                    <p class="card-text">Incorrect: Logo is too close to the edge</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card example-card shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h3 class="h4 mb-4"><i class="bi bi-palette me-2"></i>2. Color Usage on Different Backgrounds</h3>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 logo-item good-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display">
+                                        <img src="https://logo.stayforge.io/logos/StayForge_full.svg" alt="Stayforge Full Logo" class="img-fluid" width="200">
+                                    </div>
+                                    <p class="card-text">Correct: Color logo on light background</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 logo-item good-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display dark">
+                                        <img src="https://logo.stayforge.io/logos/StayForge_full_white.svg" alt="Stayforge Full Logo White" class="img-fluid" width="200">
+                                    </div>
+                                    <p class="card-text">Correct: White logo on dark background</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card example-card shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h3 class="h4 mb-4"><i class="bi bi-arrows-angle-contract me-2"></i>3. Minimum Size Requirements</h3>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 logo-item good-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display">
+                                        <img src="https://logo.stayforge.io/logos/StayForge_full.svg" alt="Stayforge Full Logo" class="img-fluid" width="100">
+                                    </div>
+                                    <p class="card-text">Correct: Full logo at minimum size (100px)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 logo-item good-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display">
+                                        <img src="https://logo.stayforge.io/logos/stayforge_icon.svg" alt="Stayforge Icon" class="img-fluid" width="32">
+                                    </div>
+                                    <p class="card-text">Correct: Icon at minimum size (32px)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Incorrect Usage Examples -->
+        <section class="mb-5">
+            <h2 class="section-title h3"><i class="bi bi-x-circle me-2"></i>Incorrect Usage Examples</h2>
+
+            <div class="card example-card shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h3 class="h4 mb-4"><i class="bi bi-exclamation-triangle me-2"></i>1. Prohibited Modifications</h3>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 logo-item bad-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display">
+                                        <img src="https://logo.stayforge.io/logos/StayForge_full.svg" alt="Stayforge Full Logo" class="img-fluid" width="200" style="transform: rotate(45deg);">
+                                    </div>
+                                    <p class="card-text">Incorrect: Logo should not be rotated</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 logo-item bad-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display">
+                                        <img src="https://logo.stayforge.io/logos/StayForge_full.svg" alt="Stayforge Full Logo" class="img-fluid" width="200" style="filter: grayscale(100%);">
+                                    </div>
+                                    <p class="card-text">Incorrect: Logo should not be recolored</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 logo-item bad-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display">
+                                        <img src="https://logo.stayforge.io/logos/StayForge_full.svg" alt="Stayforge Full Logo" class="img-fluid" width="200" style="transform: scaleX(2);">
+                                    </div>
+                                    <p class="card-text">Incorrect: Logo should not be stretched</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card example-card shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h3 class="h4 mb-4"><i class="bi bi-geo-alt me-2"></i>2. Poor Placement</h3>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 logo-item bad-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display" style="background: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23f0f0f0%22/><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23ddd%22/></svg>');">
+                                        <img src="https://logo.stayforge.io/logos/StayForge_full.svg" alt="Stayforge Full Logo" class="img-fluid" width="200">
+                                    </div>
+                                    <p class="card-text">Incorrect: Logo on busy background</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 logo-item bad-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display dark">
+                                        <img src="https://logo.stayforge.io/logos/StayForge_full.svg" alt="Stayforge Full Logo" class="img-fluid" width="200">
+                                    </div>
+                                    <p class="card-text">Incorrect: Color logo on dark background</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card example-card shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h3 class="h4 mb-4"><i class="bi bi-arrows-angle-contract me-2"></i>3. Size Violations</h3>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 logo-item bad-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display">
+                                        <img src="https://logo.stayforge.io/logos/StayForge_full.svg" alt="Stayforge Full Logo" class="img-fluid" width="50">
+                                    </div>
+                                    <p class="card-text">Incorrect: Logo smaller than minimum size</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 logo-item bad-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display">
+                                        <img src="https://logo.stayforge.io/logos/stayforge_icon.svg" alt="Stayforge Icon" class="img-fluid" width="16">
+                                    </div>
+                                    <p class="card-text">Incorrect: Icon smaller than minimum size</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Power By Stayforge Usage -->
+        <section>
+            <h2 class="section-title h3"><i class="bi bi-lightning me-2"></i>Power By Stayforge Usage</h2>
+
+            <div class="card example-card shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h3 class="h4 mb-4"><i class="bi bi-check-circle me-2"></i>Correct Usage</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100 logo-item good-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display">
+                                        <img src="https://logo.stayforge.io/logos/PowerBy_StayForge.svg" alt="Power By Stayforge" class="img-fluid" width="200">
+                                    </div>
+                                    <p class="card-text">Correct: Used as a secondary element to indicate integration</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card example-card shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="h4 mb-4"><i class="bi bi-x-circle me-2"></i>Incorrect Usage</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100 logo-item bad-example">
+                                <div class="card-body text-center">
+                                    <div class="logo-display">
+                                        <img src="https://logo.stayforge.io/logos/PowerBy_StayForge.svg" alt="Power By Stayforge" class="img-fluid" width="400">
+                                    </div>
+                                    <p class="card-text">Incorrect: Too dominant in the layout</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
